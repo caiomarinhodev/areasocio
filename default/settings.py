@@ -30,9 +30,9 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']
 
 CLOUDINARY = {
-    'cloud_name': '',
-    'api_key': '',
-    'api_secret': ''
+    'cloud_name': 'portalsbgea',
+    'api_key': '811464594433584',
+    'api_secret': 'DWB6inGiEXrGRbCTEi1sjKhv7os'
 }
 
 # Application definition
