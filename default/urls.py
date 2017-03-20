@@ -17,8 +17,11 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 
+from app.views import DashboardView
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^admin/', admin.site.urls),
     url(r'^admin/login/$', auth_views.login),
+    url(r'^$', DashboardView.as_view(), name='dashboard'),
 ]
