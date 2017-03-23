@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+{% block body %}
+    <body class="hold-transition register-page" data-gr-c-s-loaded="true">
+    <div class="register-box">
+        <div class="register-logo">
+            <a href="#">Area do Sócio</a>
+        </div>
+    </div>
+    <div class="container well">
+        <div class="row">
+            <form>
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label>Nome</label>
+                            {{ form.nome }}
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label>Sobrenome</label>
+                            {{ form.sobrenome }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label>Categoria Desejada</label>
+                            {{ form.categoria }}
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-4 form-group">
+                            <label>CEP</label>
+                            {{ form.cep }}
+                        </div>
+                        <div class="col-sm-4 form-group">
+                            <label>Data Nascimento</label>
+                            {{ form.data_nascimento }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-8 form-group">
+                            <label>Address</label>
+                            {{ form.endereco }}
+                        </div>
+                        <div class="col-sm-4 form-group">
+                            <label>Address</label>
+                            {{ form.numero }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4 form-group">
+                            <label>Bairro</label>
+                            {{ form.bairro }}
+                        </div>
+                        <div class="col-sm-4 form-group">
+                            <label>Cidade</label>
+                            {{ form.cidade }}
+                        </div>
+                        <div class="col-sm-4 form-group">
+                            <label>Estado</label>
+                            {{ form.estado }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label>Título</label>
+                            {{ form.titulo }}
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label>Area de Pesquisa</label>
+                            {{ form.area }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6 form-group">
+                            <label>Departamento</label>
+                            {{ form.departamento }}
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label>Universidade</label>
+                            {{ form.universidade }}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 form-group">
+                            <label>Email</label>
+                            {{ form.email }}
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label>Senha</label>
+                            {{ form.senha }}
+                        </div>
+                        <div class="col-sm-6 form-group">
+                            <label>Confirmar Senha</label>
+                            {{ form.retype_senha }}
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-lg btn-info">Registrar</button>
+                </div>
+            </form>
+            <br/>
+
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-xs-12">
+                <a href="/login" class="text-center">Se você já for Sócio, clique aqui.</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- /.register-box -->
+
+    <!-- jQuery 2.2.3 -->
+    <script src="{% static 'plugins/jQuery/jQuery-2.2.0.min.js' %}"></script>
+    <!-- Bootstrap 3.3.6 -->
+    <script src='{% static 'bootstrap/js/bootstrap.min.js' %}'></script>
+
+
+    </body>
+{% endblock %}
