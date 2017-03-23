@@ -29,19 +29,18 @@ class Activable(models.Model):
 
 
 TITULOS = (
-    ('Doutor', 'Doutor'),
-    ('Doutorando', 'Doutorando'),
-    ('Mestre', 'Mestre'),
+    ('DOUTOR', 'DOUTOR'),
+    ('DOUTORANDO', 'DOUTORANDO'),
+    ('M', 'Mestre'),
     ('Mestrando', 'Mestrando'),
     ('Bacharel', 'Bacharel'),
     ('Graduando', 'Graduando')
 )
 
 CATEGORIAS = (
-    ('ASPIRANTES', 'ASPIRANTES'),
-    ('REGULARES', 'REGULARES'),
-    ('EFETIVOS', 'EFETIVOS'),
-    ('ADMINISTRADOR', 'ADMINISTRADOR'),
+    ('ASPIRANTE', 'ASPIRANTE'),
+    ('REGULAR', 'REGULAR'),
+    ('EFETIVO', 'EFETIVO')
 )
 
 
@@ -72,7 +71,7 @@ class Fotoable(models.Model):
     class Meta:
         abstract = True
 
-    foto = CloudinaryField('foto')
+    foto = CloudinaryField('foto', blank=True, null=True)
 
 
 class BaseAddress(models.Model):
@@ -102,41 +101,12 @@ class Usuario(TimeStamped, Activable, Sociable, Fotoable, BaseAddress):
 
     conta = models.OneToOneField(Account, on_delete=models.CASCADE)
     nome = models.CharField(max_length=200, verbose_name=_('Nome'))
+    sobrenome = models.CharField(max_length=200, verbose_name=_('Sobrenome'))
     data_nascimento = models.DateField()
     status_pagamento = models.BooleanField(default=False)
 
     def __unicode__(self):
-        return "%s" % self.name
+        return "%s" % self.nome
 
     def get_birth_date(self):
         return self.data_nascimento.strftime("%d/%m/%Y")
-
-    @staticmethod
-    def create(nome, email, categoria, senha, is_active, data_nascimento, titulo, descricao,
-               area, depto, universidade, rua, num, bairro, cep, cidade, estado, foto):
-        """
-        Create an user
-        """
-        user = Usuario()
-        user.nome = nome
-        user.categoria = categoria  # Instance or pk categoria.
-        user.is_active = is_active
-        account = Account.objects.create_user(
-            create_username(email), email, senha)
-        account.save()
-        user.conta = account
-        user.data_nascimento = data_nascimento
-        if foto:
-            user.foto = foto
-        user.titulo = titulo
-        user.descricao = descricao
-        user.area = area
-        user.departamento = depto
-        user.universidade = universidade
-        user.rua = rua
-        user.numero = num
-        user.bairro = bairro
-        user.cep = cep
-        user.cidade = cidade
-        user.estado = estado
-        user.save()
