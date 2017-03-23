@@ -12,7 +12,6 @@ from django.views.generic.edit import ProcessFormView
 class CustomLoginRequiredMixin(LoginRequiredMixin):
     login_url = '/login'
     permission_denied_message = 'Acesso Negado'
-    raise_exception = True
 
 
 class CustomContextMixin(CustomLoginRequiredMixin, ContextMixin):

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% load i18n %}
+{% block body %}
+    <body class="hold-transition register-page" data-gr-c-s-loaded="true">
+    <div class="register-box">
+        <div class="register-logo">
+            <a href="#">Area do Sócio</a>
+        </div>
+        <div class="register-box-body">
+            <p class="login-box-msg">Registro de novo Sócio</p>
+            <form action="" method="post" id="form" data-parsley-validate>{% csrf_token %}
+                <div class="form-group has-feedback">
+                    <label>Email</label>
+                    {{ form.email }}
+                    <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <label>Senha</label>
+                    {{ form.password }}
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+                <div class="form-group has-feedback">
+                    <label>Confirmar Senha</label>
+                    {{ form.retype_password }}
+                    <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+
+                <div class="form-group has-feedback">
+                    <button class="btn btn-primary btn-block submit">Registrar</button>
+                </div>
+            </form>
+            <br/>
+        </div>
+    </div>
+    {% include 'scripts.html' %}
+    {% include 'loading.html' %}
+
+    <!-- /.register-box -->
+    </body>
+{% endblock %}

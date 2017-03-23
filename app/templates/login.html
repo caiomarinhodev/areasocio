@@ -11,7 +11,7 @@
         <div class="login-box-body">
             <p class="login-box-msg">Faça login para iniciar sua sessão</p>
 
-            <form action="" method="post">
+            <form action="" method="post">{% csrf_token %}
                 <div class="form-group has-feedback">
                     {{ form.email }}
                     {#                    <input type="email" class="form-control" placeholder="Email">#}
@@ -39,10 +39,8 @@
         <!-- /.login-box-body -->
     </div>
     <!-- /.login-box -->
+    {% include 'scripts.html' %}
+    {% include 'loading.html' %}
 
-    <!-- jQuery 2.2.3 -->
-    <script src="{% static 'plugins/jQuery/jQuery-2.2.0.min.js' %}"></script>
-    <!-- Bootstrap 3.3.6 -->
-    <script src='{% static 'bootstrap/js/bootstrap.min.js' %}'></script>
     </body>
 {% endblock %}
