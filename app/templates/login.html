@@ -47,6 +47,11 @@
     <!-- /.login-box -->
     {% include 'scripts.html' %}
     {% include 'loading.html' %}
+    <script>
+        $(document).ready(function () {
+            allInputsValidation(true, []);
+        });
+    </script>
 
     </body>
 {% endblock %}

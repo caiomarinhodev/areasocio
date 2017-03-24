@@ -6,3 +6,4 @@ psycopg2==2.6.1
 whitenoise==2.0.6
 django-ckeditor==5.0.3
 cloudinary==1.4.0
+pyimgur
