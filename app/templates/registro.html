@@ -3,6 +3,10 @@
 {% load i18n %}
 {% block body %}
     <body class="hold-transition register-page" data-gr-c-s-loaded="true">
+    <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous"></script>
     <div class="register-box">
         <div class="register-logo">
             <a href="#">Area do Sócio</a>
@@ -122,6 +126,25 @@
         </div>
     </div>
     {% include 'scripts.html' %}
+    <script>
+        $(document).ready(function () {
+
+            $('input, select, textarea').attr('style', 'text-transform:uppercase');
+
+
+            $('[name=email], [name=senha], [name=retype_senha]').attr('style', 'text-transform:lowercase');
+            $('.submit').attr('disabled', true);
+            $('[name=senha], [name=retype_senha]').on('change focusout keyup', function () {
+                var p = $('[name=senha]').val();
+                var rp = $('[name=retype_senha]').val();
+                if (p != rp) {
+                    $('.submit').attr('disabled', true);
+                } else {
+                    $('.submit').attr('disabled', false);
+                }
+            });
+        });
+    </script>
     {% include 'loading.html' %}
 
     <!-- /.register-box -->

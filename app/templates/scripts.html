@@ -1,9 +1,4 @@
 {% load staticfiles %}
-<script
-        src="https://code.jquery.com/jquery-2.2.4.min.js"
-        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
-        crossorigin="anonymous"></script>
-
 
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 
@@ -66,6 +61,8 @@
             }
         });
 
+        $('input, select,textarea').attr('data-parsley-required-message', 'Este campo é obrigatório');
+
         $('#table').DataTable({
             responsive: true
         });
@@ -75,11 +72,6 @@
             todayHighlight: true,
             autoclose: true
         });
-
-        $('input, select, textarea').attr('style', 'text-transform:uppercase')
-            .attr('data-parsley-required-message', 'Este campo é obrigatório');
-
-        $('[name=email]').attr('style', 'text-transform:lowercase');
 
         $('[name=numero]').inputmask('999999');
 
@@ -129,16 +121,7 @@
 
     });
 
-    $('.submit').attr('disabled', true);
-    $('[name=senha], [name=retype_senha]').on('change focusout keyup', function () {
-        var p = $('[name=senha]').val();
-        var rp = $('[name=retype_senha]').val();
-        if (p != rp) {
-            $('.submit').attr('disabled', true);
-        } else {
-            $('.submit').attr('disabled', false);
-        }
-    });
+
 
 
 </script>
