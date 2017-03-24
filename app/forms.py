@@ -12,6 +12,22 @@ class BaseForm(forms.Form):
             field.widget.attrs['required'] = 'true'
 
 
+class FormLogin(BaseForm):
+    email = forms.EmailField(widget=forms.TextInput(attrs={
+        'required': 'true',
+        'maxlength': 150,
+        'placeholder': 'Email'
+
+    }))
+    password = forms.CharField(widget=forms.PasswordInput(attrs={
+        'autocomplete': 'off',
+        'class': 'form-control input-lg',
+        'placeholder': 'Senha',
+        'required': 'true',
+        'data-parsley-trigger': 'change'
+    }))
+
+
 class FormRegistro(forms.ModelForm, BaseForm):
     email = forms.EmailField(widget=forms.EmailInput)
     senha = forms.CharField(widget=forms.PasswordInput)
