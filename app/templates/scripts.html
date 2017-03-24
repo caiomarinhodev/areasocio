@@ -50,9 +50,30 @@
         return $('#form').parsley().validate();
     }
 
+    function allInputsValidation(bool, array) {
+        if (bool) {
+            $('input, select, textarea').attr('data-parsley-required', 'true');
+            $('input, select,textarea').attr('data-parsley-required-message', 'Este campo é obrigatório');
+        } else {
+            try {
+                array.forEach(function (elem) {
+                    $('[name=' + elem + ']').attr('data-parsley-required', 'true');
+                    $('[name=' + elem + ']').attr('data-parsley-required-message', 'Este campo é obrigatório');
+                });
+            } catch (e) {
+                // None
+            }
+
+        }
+    }
+
 
     $(document).ready(function () {
         $('#form').parsley();
+        $('.back').click(function () {
+            $('#loading_modal').modal('show');
+            window.history.back();
+        });
 
         $('.submit').click(function () {
             if (form_is_valid()) {
@@ -61,7 +82,6 @@
             }
         });
 
-        $('input, select,textarea').attr('data-parsley-required-message', 'Este campo é obrigatório');
 
         $('#table').DataTable({
             responsive: true
@@ -120,8 +140,6 @@
         $('[name=cep]').inputmask('99.999-999');
 
     });
-
-
 
 
 </script>

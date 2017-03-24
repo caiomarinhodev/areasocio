@@ -9,7 +9,6 @@ class BaseForm(forms.Form):
         super(BaseForm, self).__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
             field.widget.attrs['class'] = 'form-control'
-            field.widget.attrs['required'] = 'true'
 
 
 class FormLogin(BaseForm):
@@ -41,4 +40,16 @@ class FormRegistro(forms.ModelForm, BaseForm):
 
     def __init__(self, *args, **kwargs):
         super(FormRegistro, self).__init__(*args, **kwargs)
+        self.fields['data_nascimento'].widget.attrs['class'] += ' datepicker'
+
+
+class FormAlterarDados(forms.ModelForm, BaseForm):
+    class Meta:
+        model = Usuario
+        fields = ('nome', 'sobrenome', 'data_nascimento', 'titulo', 'descricao',
+                  'categoria', 'area', 'departamento', 'universidade', 'cep', 'rua', 'numero',
+                  'bairro', 'cidade', 'estado', 'foto')
+
+    def __init__(self, *args, **kwargs):
+        super(FormAlterarDados, self).__init__(*args, **kwargs)
         self.fields['data_nascimento'].widget.attrs['class'] += ' datepicker'

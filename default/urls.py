@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 
 from app.views.AuthView import LoginView, LogoutView
+from app.views.ConfigView import ConfigView
 from app.views.DashboardView import DashboardView
 from app.views.RegistroView import RegistroView
 
@@ -29,4 +30,5 @@ urlpatterns = [
     url(r'^registro/$', RegistroView.as_view(), name='registro'),
     url(r'^login', LoginView.as_view(), name='login'),
     url(r'^logout/$', LogoutView.as_view(), name='logout'),
+    url(r'^configuracoes/$', ConfigView.as_view(), name='configuracoes'),
 ]
