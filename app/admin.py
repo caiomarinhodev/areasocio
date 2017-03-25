@@ -5,6 +5,7 @@ from app.models import Usuario, Categoria
 
 
 class UsuarioAdmin(admin.ModelAdmin):
+    ordering = ('-created_at',)
     list_display = ('nome', 'id', 'cep', 'titulo', 'universidade', 'categoria', 'status_pagamento')
 
 

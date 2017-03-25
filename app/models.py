@@ -61,7 +61,7 @@ class Sociable(models.Model):
 
     titulo = models.CharField(max_length=100, choices=TITULOS)
     descricao = models.TextField(verbose_name='Outras Informações')
-    categoria = models.OneToOneField(Categoria)
+    categoria = models.ForeignKey(Categoria)
     area = models.CharField(max_length=100, blank=True, null=True)
     departamento = models.CharField(max_length=100, blank=True, null=True)
     universidade = models.CharField(max_length=100, blank=True, null=True)

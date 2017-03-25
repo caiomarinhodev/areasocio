@@ -23,6 +23,7 @@ class RegistroView(CreateView):
         except Exception:
             messages.error(self.request, 'Email já esta sendo usado')
             return self.form_invalid(form)
+        messages.success(self.request, 'Sócio registrado com sucesso')
         return super(RegistroView, self).form_valid(form)
 
     def form_invalid(self, form):
