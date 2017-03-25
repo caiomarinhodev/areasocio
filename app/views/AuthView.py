@@ -25,7 +25,11 @@ class LoginView(CustomFormView):
         try:
             auth_user = Account.objects.get(email=form.cleaned_data['email'])
             user = authenticate(username=auth_user.username, password=form.cleaned_data['password'])
-            login(self.request, user)
+            if user:
+                login(self.request, user)
+            else:
+                messages.error(self.request, 'Email ou Senha inválida')
+                return self.form_invalid(form)
         except Account.DoesNotExist:
             messages.error(self.request, 'Usuário não cadastrado.')
             return self.form_invalid(form)

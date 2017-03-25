@@ -1,0 +1,5 @@
+1490450522448	geckodriver	INFO	Listening on 127.0.0.1:54815
+1490450522974	mozprofile::profile	INFO	Using profile path C:\Users\caiom\AppData\Local\Temp\rust_mozprofile.nrFa7F6F2H4G
+1490450522980	geckodriver::marionette	INFO	Starting browser C:\Program Files (x86)\Mozilla Firefox\firefox.exe with args []
+1490450522989	geckodriver::marionette	INFO	Connecting to Marionette on localhost:54819
+1490450524003	Marionette	INFO	Listening on port 54819
