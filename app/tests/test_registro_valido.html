@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8000/" />
+<title>test_registro_valido</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">test_registro_valido</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/login?next=/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Inscrever-me como Sócio</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Inscrever-me como Sócio</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_nome</td>
+	<td>caio</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_sobrenome</td>
+	<td>fulano</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=id_categoria</td>
+	<td>label=REGULAR</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=id_data_nascimento</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=id_data_nascimento</td>
+	<td>19011995</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=id_cep</td>
+	<td></td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=id_cep</td>
+	<td>58423530</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=id_rua</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_rua</td>
+	<td>Rua Cláudio Bezerra de Lima</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_bairro</td>
+	<td>tres irmas</td>
+</tr>
+<tr>
+	<td>sendKeys</td>
+	<td>id=id_numero</td>
+	<td>888</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_cidade</td>
+	<td>campina grande</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_estado</td>
+	<td>pb</td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=id_titulo</td>
+	<td>label=Mestre</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_area</td>
+	<td>GEO</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_departamento</td>
+	<td>FISICA</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_universidade</td>
+	<td>UFCG</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_descricao</td>
+	<td>NENHUMA ATIVIDADE</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_email</td>
+	<td>caiodotdev@gmail.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_senha</td>
+	<td>senhavalida</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_retype_senha</td>
+	<td>senhavalida</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//button[@type='button']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//button[@type='button']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//div[4]/p</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=h2</td>
+	<td>Sucesso</td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>//div[4]/p</td>
+	<td>Sócio registrado com sucesso</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.confirm</td>
+	<td></td>
+</tr>
+<tr>
+	<td>open</td>
+	<td>/admin/login/?next=/admin/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>id=id_username</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_username</td>
+	<td>caio</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_password</td>
+	<td>oficinag3</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Usuários</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Autenticação e Autorização</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Autenticação e Autorização</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Usuários</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Usuários</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=td.field-email</td>
+	<td>caiodotdev@gmail.com</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=_selected_action</td>
+	<td></td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>name=action</td>
+	<td>label=Remover usuários selecionados</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=index</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=input[type=&quot;submit&quot;]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=li.success</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertText</td>
+	<td>css=li.success</td>
+	<td>Removido 1 usuário com sucesso.</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>link=Ver o site</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Ver o site</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=img.user-image</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=aside.main-sidebar</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>css=#logout &gt; a &gt; span</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=#logout &gt; a</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
